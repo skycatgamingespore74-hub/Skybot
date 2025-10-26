@@ -1,0 +1,63 @@
+body {
+      font-family: Arial, sans-serif;
+        background: #1e1e2f;
+          color: white;
+            margin: 0;
+            }
+
+            header {
+              text-align: center;
+                padding: 2em;
+                  background: linear-gradient(to right, #182848, #4b6cb7);
+                  }
+
+                  .alert {
+                    text-align: center;
+                      background: #ff4c4c;
+                        margin: 1em;
+                          padding: 1em;
+                            border-radius: 8px;
+                              font-weight: bold;
+                              }
+
+                              .container {
+                                max-width: 900px;
+                                  margin: 2em auto;
+                                    padding: 0 1em;
+                                    }
+
+                                    .features {
+                                      display: flex;
+                                        flex-wrap: wrap;
+                                          gap: 1em;
+                                            margin-top: 1em;
+                                            }
+
+                                            .feature {
+                                              flex: 1 1 200px;
+                                                background: #2a2a3d;
+                                                  padding: 1em;
+                                                    border-radius: 8px;
+                                                    }
+
+                                                    button {
+                                                      display: block;
+                                                        margin: 2em auto;
+                                                          padding: 1em 2em;
+                                                            border: none;
+                                                              border-radius: 50px;
+                                                                background-color: #7289da;
+                                                                  color: white;
+                                                                    font-weight: bold;
+                                                                      cursor: pointer;
+                                                                      }
+
+                                                                      footer {
+                                                                        text-align: center;
+                                                                          padding: 1em;
+                                                                            background: #111123;
+                                                                            }
+                                                                            footer a {
+                                                                              color: #7289da;
+                                                                                text-decoration: none;
+                                                                                }
