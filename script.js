@@ -4,7 +4,7 @@ document.getElementById("alert").innerText =
 
   // Fonctionnalités du bot
   const features = [
-    { title: "Modération", desc: "Kick, ban, anti-spam, et plus." },
+    { title: "TOURNOI", desc: "Creation, Gestion de tournoi puis un Fun en plus." },
       { title: "Musique", desc: "Écoute tes musiques préférées." },
         { title: "Fun & Jeux", desc: "Des commandes amusantes pour ton serveur." },
           { title: "Notifications", desc: "Reste informé avec des alertes personnalisées." }
