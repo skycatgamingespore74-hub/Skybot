@@ -1,59 +1,69 @@
 body {
-    font-family: 'Poppins', sans-serif;
-      background: linear-gradient(120deg, #3b82f6, #8b5cf6, #f97316, #ef4444);
-        background-size: 400% 400%;
-          animation: gradientMove 10s ease infinite;
-            color: white;
+      margin: 0;
+        font-family: 'Poppins', sans-serif;
+          background: linear-gradient(135deg, #4b6cb7, #182848);
+            color: #fff;
               text-align: center;
-                margin: 0;
-                  padding: 0;
-                  }
+                min-height: 100vh;
+                  display: flex;
+                    align-items: center;
+                      justify-content: center;
+                      }
 
-                  @keyframes gradientMove {
-                    0% { background-position: 0% 50%; }
-                      50% { background-position: 100% 50%; }
-                        100% { background-position: 0% 50%; }
-                        }
-
-                        header {
-                          padding: 2rem 1rem;
-                          }
-
-                          h1 {
-                            font-size: 2.5rem;
-                              margin-bottom: 0.3rem;
-                              }
-
-                              main {
-                                padding: 1rem 2rem;
+                      .container {
+                        max-width: 800px;
+                          padding: 40px;
+                            background: rgba(0, 0, 0, 0.4);
+                              border-radius: 20px;
+                                box-shadow: 0 0 20px rgba(0,0,0,0.3);
                                 }
 
-                                .btn {
-                                  display: inline-block;
-                                    margin: 10px;
-                                      padding: 0.8rem 1.5rem;
-                                        font-size: 1rem;
-                                          border: none;
-                                            border-radius: 12px;
-                                              cursor: pointer;
-                                                color: white;
-                                                  text-decoration: none;
-                                                    background: rgba(255,255,255,0.1);
-                                                      transition: 0.3s ease;
-                                                      }
+                                h1 {
+                                  font-size: 3em;
+                                    margin-bottom: 0.2em;
+                                      color: #fff;
+                                      }
 
-                                                      .btn:hover {
-                                                        background: rgba(255,255,255,0.3);
-                                                          transform: scale(1.05);
-                                                          }
+                                      h2 {
+                                        margin-top: 40px;
+                                          color: #ffcc70;
+                                          }
 
-                                                          .hidden {
-                                                            display: none;
-                                                            }
+                                          p {
+                                            font-size: 1.1em;
+                                            }
 
-                                                            footer {
-                                                              background: rgba(0,0,0,0.3);
-                                                                padding: 1rem;
-                                                                  margin-top: 2rem;
-                                                                    border-top: 1px solid rgba(255,255,255,0.2);
-                                                                    }
+                                            button {
+                                              background: linear-gradient(90deg, #ff512f, #dd2476);
+                                                border: none;
+                                                  padding: 12px 25px;
+                                                    border-radius: 8px;
+                                                      color: white;
+                                                        font-size: 1em;
+                                                          cursor: pointer;
+                                                            transition: transform 0.2s, opacity 0.2s;
+                                                              margin: 10px;
+                                                              }
+
+                                                              button:hover {
+                                                                transform: scale(1.05);
+                                                                  opacity: 0.9;
+                                                                  }
+
+                                                                  .feature {
+                                                                    background: rgba(255, 255, 255, 0.1);
+                                                                      padding: 15px;
+                                                                        border-radius: 10px;
+                                                                          margin: 10px 0;
+                                                                          }
+
+                                                                          footer {
+                                                                            margin-top: 40px;
+                                                                              font-size: 0.9em;
+                                                                              }
+
+                                                                              footer a {
+                                                                                color: #9ed0ff;
+                                                                                  text-decoration: none;
+                                                                                  }
+}
