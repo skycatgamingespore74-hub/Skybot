@@ -3,31 +3,23 @@
 <head>
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Connexion - SkyBot</title>
+      <title>Connexion Discord - SkyBot</title>
         <link rel="stylesheet" href="style.css">
         </head>
         <body>
           <header>
-              <h1>🔐 Connexion à SkyBot</h1>
+              <h1>Connexion à SkyBot</h1>
                   <p>Connecte-toi avec ton compte Discord pour continuer</p>
                     </header>
 
-                      <div class="container" style="text-align: center;">
-                          <button id="discordLogin" class="discord-btn">Se connecter avec Discord</button>
-                              <button onclick="window.location.href='index.html'">⬅ Retour</button>
-                                </div>
+                      <div class="container" style="text-align:center;">
+                          <button class="discord-btn" onclick="window.location.href='https://discord.com/api/oauth2/authorize?client_id=1396850863401603194&redirect_uri=https%3A%2F%2Facesky-esport.github.io%2Fcallback.html&response_type=token&scope=identify'">
+                                🔗 Se connecter avec Discord
+                                    </button>
+                                      </div>
 
-                                  <script>
-                                      document.getElementById("discordLogin").addEventListener("click", () => {
-                                            const clientId = "1396850863401603194"; // ID du bot SkyBot
-                                                  const redirectUri = encodeURIComponent("https://ton-site.github.io/callback.html"); 
-                                                        const scope = "identify guilds";
-                                                              const responseType = "token";
-                                                                    const discordAuthUrl = 
-                                                                            `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
-
-                                                                                  window.location.href = discordAuthUrl;
-                                                                                      });
-                                                                                        </script>
-                                                                                        </body>
-                                                                                        </html>
+                                        <footer>
+                                            &copy; 2025 SkyBot - <a href="index.html">Retour à l'accueil</a>
+                                              </footer>
+                                              </body>
+                                              </html>
