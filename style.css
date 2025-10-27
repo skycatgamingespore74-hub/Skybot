@@ -1,69 +1,263 @@
-body {
-      margin: 0;
-        font-family: 'Poppins', sans-serif;
-          background: linear-gradient(135deg, #4b6cb7, #182848);
-            color: #fff;
-              text-align: center;
-                min-height: 100vh;
-                  display: flex;
-                    align-items: center;
-                      justify-content: center;
-                      }
+/* ============================================
+   STYLE GLOBAL - SkyBot
+      (index.html, twitch.html, terms.html, privacy.html,
+          login.html, callback.html)
+             ============================================ */
 
-                      .container {
-                        max-width: 800px;
-                          padding: 40px;
-                            background: rgba(0, 0, 0, 0.4);
-                              border-radius: 20px;
-                                box-shadow: 0 0 20px rgba(0,0,0,0.3);
-                                }
+             /* Import de police si besoin (décommente si tu veux) */
+             /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); */
 
-                                h1 {
-                                  font-size: 3em;
-                                    margin-bottom: 0.2em;
-                                      color: #fff;
-                                      }
+             :root{
+               --bg1: #1e1e2f;
+                 --bg2: #182848;
+                   --accent1: #7289da; /* bleu Discord-ish */
+                     --accent2: #8b5cf6; /* violet */
+                       --accent3: #f97316; /* orange */
+                         --accent4: #ef4444; /* rouge */
+                           --card-bg: rgba(42,42,61,0.85);
+                             --glass: rgba(255,255,255,0.04);
+                               --text: #ffffff;
+                                 --muted: #cbd5e1;
+                                   --radius: 12px;
+                                   }
 
-                                      h2 {
-                                        margin-top: 40px;
-                                          color: #ffcc70;
-                                          }
+                                   /* Reset minimal */
+                                   * { box-sizing: border-box; }
+                                   html,body { height: 100%; }
+                                   body{
+                                     margin: 0;
+                                       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                                         background: linear-gradient(135deg, var(--bg2) 0%, #2b3a67 40%, #2b2b3a 60%, #1e1e2f 100%);
+                                           color: var(--text);
+                                             -webkit-font-smoothing:antialiased;
+                                               -moz-osx-font-smoothing:grayscale;
+                                                 line-height: 1.45;
+                                                   -webkit-touch-callout: none;
+                                                     -webkit-user-select: none;
+                                                     }
 
-                                          p {
-                                            font-size: 1.1em;
-                                            }
+                                                     /* Centre container général */
+                                                     .container {
+                                                       max-width: 980px;
+                                                         margin: 40px auto;
+                                                           padding: 28px;
+                                                             background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.35));
+                                                               border-radius: 16px;
+                                                                 box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+                                                                   backdrop-filter: blur(6px);
+                                                                   }
 
-                                            button {
-                                              background: linear-gradient(90deg, #ff512f, #dd2476);
-                                                border: none;
-                                                  padding: 12px 25px;
-                                                    border-radius: 8px;
-                                                      color: white;
-                                                        font-size: 1em;
-                                                          cursor: pointer;
-                                                            transition: transform 0.2s, opacity 0.2s;
-                                                              margin: 10px;
-                                                              }
+                                                                   /* Header commun */
+                                                                   header{
+                                                                     text-align: center;
+                                                                       padding: 28px 16px;
+                                                                         background: linear-gradient(90deg, rgba(24,40,72,0.95), rgba(75,108,183,0.85));
+                                                                           border-bottom: 1px solid rgba(255,255,255,0.03);
+                                                                           }
 
-                                                              button:hover {
-                                                                transform: scale(1.05);
-                                                                  opacity: 0.9;
-                                                                  }
+                                                                           header h1{
+                                                                             margin: 0;
+                                                                               font-size: 2.4rem;
+                                                                                 letter-spacing: -0.5px;
+                                                                                 }
 
-                                                                  .feature {
-                                                                    background: rgba(255, 255, 255, 0.1);
-                                                                      padding: 15px;
-                                                                        border-radius: 10px;
-                                                                          margin: 10px 0;
-                                                                          }
+                                                                                 header p{
+                                                                                   margin: 6px 0 0;
+                                                                                     color: var(--muted);
+                                                                                       font-size: 0.98rem;
+                                                                                       }
 
-                                                                          footer {
-                                                                            margin-top: 40px;
-                                                                              font-size: 0.9em;
-                                                                              }
+                                                                                       /* ALERT */
+                                                                                       .alert{
+                                                                                         margin: 18px auto;
+                                                                                           padding: 12px 14px;
+                                                                                             background: linear-gradient(90deg, #ff6b6b, #ff4c4c);
+                                                                                               color: #fff;
+                                                                                                 font-weight: 600;
+                                                                                                   border-radius: 10px;
+                                                                                                     max-width: 900px;
+                                                                                                       text-align: center;
+                                                                                                       }
 
-                                                                              footer a {
-                                                                                color: #9ed0ff;
-                                                                                  text-decoration: none;
-                                                                                  }
-}
+                                                                                                       /* Titres sections */
+                                                                                                       h2{
+                                                                                                         margin-top: 22px;
+                                                                                                           color: #ffefc7;
+                                                                                                             font-size: 1.2rem;
+                                                                                                             }
+
+                                                                                                             /* Features grid */
+                                                                                                             .features {
+                                                                                                               display: flex;
+                                                                                                                 flex-wrap: wrap;
+                                                                                                                   gap: 14px;
+                                                                                                                     margin-top: 14px;
+                                                                                                                       justify-content: center;
+                                                                                                                       }
+
+                                                                                                                       .feature {
+                                                                                                                         flex: 1 1 220px;
+                                                                                                                           min-width: 200px;
+                                                                                                                             max-width: 320px;
+                                                                                                                               background: var(--card-bg);
+                                                                                                                                 padding: 18px;
+                                                                                                                                   border-radius: var(--radius);
+                                                                                                                                     text-align: left;
+                                                                                                                                       border: 1px solid rgba(255,255,255,0.03);
+                                                                                                                                         transition: transform .18s ease, box-shadow .18s ease;
+                                                                                                                                         }
+
+                                                                                                                                         .feature h3{
+                                                                                                                                           margin: 0 0 6px;
+                                                                                                                                             font-size: 1.05rem;
+                                                                                                                                             }
+                                                                                                                                             .feature p{
+                                                                                                                                               margin: 0;
+                                                                                                                                                 color: var(--muted);
+                                                                                                                                                   font-size: 0.95rem;
+                                                                                                                                                   }
+
+                                                                                                                                                   .feature:hover{
+                                                                                                                                                     transform: translateY(-6px);
+                                                                                                                                                       box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+                                                                                                                                                       }
+
+                                                                                                                                                       /* Buttons génériques */
+                                                                                                                                                       .buttons, .button-row { display:flex; gap:12px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:18px; }
+
+                                                                                                                                                       button, .btn {
+                                                                                                                                                         appearance: none;
+                                                                                                                                                           border: none;
+                                                                                                                                                             cursor: pointer;
+                                                                                                                                                               padding: 12px 20px;
+                                                                                                                                                                 border-radius: 999px;
+                                                                                                                                                                   font-weight: 700;
+                                                                                                                                                                     letter-spacing: .2px;
+                                                                                                                                                                       color: #fff;
+                                                                                                                                                                         background: linear-gradient(90deg, var(--accent1), var(--accent2));
+                                                                                                                                                                           box-shadow: 0 6px 18px rgba(59,97,199,0.18);
+                                                                                                                                                                             transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+                                                                                                                                                                               font-size: 1rem;
+                                                                                                                                                                                 text-decoration: none;
+                                                                                                                                                                                   display: inline-flex;
+                                                                                                                                                                                     align-items: center;
+                                                                                                                                                                                       justify-content: center;
+                                                                                                                                                                                       }
+
+                                                                                                                                                                                       button:hover, .btn:hover {
+                                                                                                                                                                                         transform: translateY(-4px);
+                                                                                                                                                                                           opacity: 0.95;
+                                                                                                                                                                                           }
+
+                                                                                                                                                                                           /* Bouton secondaire (orange -> rouge) */
+                                                                                                                                                                                           .btn-alt {
+                                                                                                                                                                                             background: linear-gradient(90deg, var(--accent3), var(--accent4));
+                                                                                                                                                                                               box-shadow: 0 6px 18px rgba(249,115,22,0.16);
+                                                                                                                                                                                               }
+
+                                                                                                                                                                                               /* Focus accessible */
+                                                                                                                                                                                               button:focus, .btn:focus { outline: 2px solid rgba(255,255,255,0.12); outline-offset: 3px; }
+
+                                                                                                                                                                                               /* Spécifique: Invite button style (si tu veux un look différent) */
+                                                                                                                                                                                               #inviteBtn {
+                                                                                                                                                                                                 background: linear-gradient(90deg, #5aa3ff, #7289da);
+                                                                                                                                                                                                   padding: 12px 26px;
+                                                                                                                                                                                                   }
+                                                                                                                                                                                                   #twitchBtn {
+                                                                                                                                                                                                     background: linear-gradient(90deg, #6f3ef7, #f97316); /* violet -> orange */
+                                                                                                                                                                                                     }
+
+                                                                                                                                                                                                     /* Hover tweaks */
+                                                                                                                                                                                                     #inviteBtn:hover { box-shadow: 0 12px 30px rgba(114,137,218,0.18); }
+                                                                                                                                                                                                     #twitchBtn:hover { box-shadow: 0 12px 30px rgba(121,63,247,0.18); }
+
+                                                                                                                                                                                                     /* Footer */
+                                                                                                                                                                                                     footer {
+                                                                                                                                                                                                       margin-top: 26px;
+                                                                                                                                                                                                         text-align: center;
+                                                                                                                                                                                                           color: var(--muted);
+                                                                                                                                                                                                             font-size: 0.92rem;
+                                                                                                                                                                                                               padding: 12px 6px;
+                                                                                                                                                                                                               }
+
+                                                                                                                                                                                                               /* Links in footer/header */
+                                                                                                                                                                                                               a { color: #9ed0ff; text-decoration: none; }
+                                                                                                                                                                                                               a:hover { text-decoration: underline; }
+
+                                                                                                                                                                                                               /* Twitch iframe container */
+                                                                                                                                                                                                               .twitch-frame, .twitch-embed {
+                                                                                                                                                                                                                 display: flex;
+                                                                                                                                                                                                                   justify-content: center;
+                                                                                                                                                                                                                     margin: 18px 0;
+                                                                                                                                                                                                                     }
+
+                                                                                                                                                                                                                     /* iframe responsive */
+                                                                                                                                                                                                                     .twitch-frame iframe, .twitch-embed iframe {
+                                                                                                                                                                                                                       max-width: 100%;
+                                                                                                                                                                                                                         width: 800px;
+                                                                                                                                                                                                                           height: 450px;
+                                                                                                                                                                                                                             border: none;
+                                                                                                                                                                                                                               border-radius: 10px;
+                                                                                                                                                                                                                                 box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+                                                                                                                                                                                                                                 }
+
+                                                                                                                                                                                                                                 /* Small screens: make iframe smaller */
+                                                                                                                                                                                                                                 @media (max-width: 880px) {
+                                                                                                                                                                                                                                   .twitch-frame iframe, .twitch-embed iframe {
+                                                                                                                                                                                                                                       width: 100%;
+                                                                                                                                                                                                                                           height: 320px;
+                                                                                                                                                                                                                                             }
+                                                                                                                                                                                                                                               .container { margin: 20px; padding: 18px; }
+                                                                                                                                                                                                                                                 header h1 { font-size: 1.8rem; }
+                                                                                                                                                                                                                                                   h2 { font-size: 1.05rem; }
+                                                                                                                                                                                                                                                   }
+
+                                                                                                                                                                                                                                                   /* Login / Discord button style */
+                                                                                                                                                                                                                                                   .discord-btn {
+                                                                                                                                                                                                                                                     background-color: #5865f2;
+                                                                                                                                                                                                                                                       border: none;
+                                                                                                                                                                                                                                                         color: white;
+                                                                                                                                                                                                                                                           padding: 12px 22px;
+                                                                                                                                                                                                                                                             border-radius: 10px;
+                                                                                                                                                                                                                                                               font-size: 1rem;
+                                                                                                                                                                                                                                                                 cursor: pointer;
+                                                                                                                                                                                                                                                                   font-weight: 700;
+                                                                                                                                                                                                                                                                     transition: transform .12s ease, background .12s ease;
+                                                                                                                                                                                                                                                                       box-shadow: 0 8px 22px rgba(88,101,242,0.16);
+                                                                                                                                                                                                                                                                       }
+                                                                                                                                                                                                                                                                       .discord-btn:hover { transform: translateY(-4px); background-color: #4752c4; }
+
+                                                                                                                                                                                                                                                                       /* Small card for user info on callback page */
+                                                                                                                                                                                                                                                                       .user-card {
+                                                                                                                                                                                                                                                                         display:inline-block;
+                                                                                                                                                                                                                                                                           background: var(--glass);
+                                                                                                                                                                                                                                                                             padding: 14px;
+                                                                                                                                                                                                                                                                               border-radius: 12px;
+                                                                                                                                                                                                                                                                                 border: 1px solid rgba(255,255,255,0.04);
+                                                                                                                                                                                                                                                                                   text-align:center;
+                                                                                                                                                                                                                                                                                   }
+
+                                                                                                                                                                                                                                                                                   /* Simple form styles (if you add forms) */
+                                                                                                                                                                                                                                                                                   form input[type="text"], form input[type="email"], form input[type="password"], .input {
+                                                                                                                                                                                                                                                                                     width: 100%;
+                                                                                                                                                                                                                                                                                       padding: 10px 12px;
+                                                                                                                                                                                                                                                                                         border-radius: 8px;
+                                                                                                                                                                                                                                                                                           border: 1px solid rgba(255,255,255,0.06);
+                                                                                                                                                                                                                                                                                             background: rgba(255,255,255,0.02);
+                                                                                                                                                                                                                                                                                               color: var(--text);
+                                                                                                                                                                                                                                                                                                 margin: 8px 0;
+                                                                                                                                                                                                                                                                                                 }
+
+                                                                                                                                                                                                                                                                                                 /* Accessibility / readable contrast */
+                                                                                                                                                                                                                                                                                                 small { color: var(--muted); display:block; margin-top:8px; }
+
+                                                                                                                                                                                                                                                                                                 /* Utility hidden */
+                                                                                                                                                                                                                                                                                                 .hidden { display: none !important; }
+
+                                                                                                                                                                                                                                                                                                 /* Make sure footer sticks visually in small pages */
+                                                                                                                                                                                                                                                                                                 .footer-spacer { height: 28px; }
+
+                                                                                                                                                                                                                                                                                                 /* Prevent iframe click overlay issues on mobile */
+                                                                                                                                                                                                                                                                                                 .twitch-frame iframe { pointer-events: auto; }
+
+                                                                                                                                                                                                                                                                                                 /* End of file */

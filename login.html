@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Connexion - SkyBot</title>
+        <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+          <header>
+              <h1>🔐 Connexion à SkyBot</h1>
+                  <p>Connecte-toi avec ton compte Discord pour continuer</p>
+                    </header>
+
+                      <div class="container" style="text-align: center;">
+                          <button id="discordLogin" class="discord-btn">Se connecter avec Discord</button>
+                              <button onclick="window.location.href='index.html'">⬅ Retour</button>
+                                </div>
+
+                                  <script>
+                                      document.getElementById("discordLogin").addEventListener("click", () => {
+                                            const clientId = "1396850863401603194"; // ID du bot SkyBot
+                                                  const redirectUri = encodeURIComponent("https://ton-site.github.io/callback.html"); 
+                                                        const scope = "identify guilds";
+                                                              const responseType = "token";
+                                                                    const discordAuthUrl = 
+                                                                            `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
+
+                                                                                  window.location.href = discordAuthUrl;
+                                                                                      });
+                                                                                        </script>
+                                                                                        </body>
+                                                                                        </html>
